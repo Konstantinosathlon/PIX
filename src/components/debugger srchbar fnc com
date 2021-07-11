@@ -1,0 +1,143 @@
+import React, { useState } from "react";
+
+const SearchBar=({onSubmit}) => {
+
+const [state, setState] = useState({term: "", color: ""});
+
+function onFormSubmit(e){
+    if (e._reactName==="onSubmit"){
+    e.preventDefault();}
+    console.log(state);
+    onSubmit(state);
+  };
+ 
+    return (
+    <div className="ui segment">
+      <form onSubmit={e => onFormSubmit(e)} className="ui form">
+        <div className="field">
+          <label>Image search</label>
+          <input  type="text"
+          value= {state.term}
+          onChange={e=> setState(prevState=>{ return{...prevState, term: e.target.value }})} />
+        </div>
+        
+        
+            <div className="inline fields">
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="any color" value="" checked={state.color===""} 
+                        onChange={setState(prevState =>{ return {...prevState, color: ""}})
+                        } 
+                        />
+                        <label>any color</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="black_and_white" value="black_and_white" checked={state.color==="black_and_white"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        } 
+                        />
+                        <label>b & w</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="black" value="black" checked={state.color==="black"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        } 
+                        />
+                        <label>black</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="white" value="white" checked={state.color==="white"}
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>white</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="orange" value="orange" checked={state.color==="orange"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>orange</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="red" value="red" checked={state.color==="red"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>red</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="purple" value="purple" checked={state.color==="purple"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>purple</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="magenta" value="magenta" checked={state.color==="magenta"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>magenta</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="green" value="green" checked={state.color==="green"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>green</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="teal" value="teal" checked={state.color==="teal"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>teal</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="blue" value="blue" checked={state.color==="blue"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>blue</label>
+                    </div>
+                </div>
+                <div className="field">
+                    <div className="ui radio checkbox">
+                        <input type="radio" name="yellow" value="yellow" checked={state.color==="yellow"} 
+                        onChange={e => setState(prevState => {return {...prevState, color: e.target.value}})
+                        }
+                        />
+                        <label>yellow</label>
+                    </div>
+                </div>
+                <button className="ui basic button" onClick={e => console.log(e)} type="submit" style={{bottom: "4em" ,float: "right"}}>Submit</button>
+              </div>
+              
+      </form>
+    </div>
+  );
+  
+}
+
+export default SearchBar;
