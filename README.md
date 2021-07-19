@@ -1,10 +1,10 @@
 # PIX
 
-A photo browser created in React.
+A photo browser web-app created with React.
 
-Able to search by keyword or keyword & color using the [unsplash](https://unsplash.com/developers) API
+Able to search by keyword or keyword + color using the [unsplash](https://unsplash.com/developers) API
 
-## Demo Video
+#### Demo Video
 
 [!video](https://user-images.githubusercontent.com/79989252/126050012-5a936eb2-9a92-45c1-8175-c46624e2b043.mp4)
 
